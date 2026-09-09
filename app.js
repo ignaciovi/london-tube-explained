@@ -937,7 +937,7 @@
       setCurrent(id);
       panel.classList.remove('show');
       parkTrain(id);
-      tweenTo({ cx: P[id].x, cy: P[id].y, w: stationW }, 2200, function () {
+      tweenTo({ cx: P[id].x, cy: P[id].y, w: stationW }, 1100, function () {
         parkTrain(id);
         showStation(id);
       });
