@@ -136,6 +136,24 @@ and a public park respectively — and both entries now say so.
 What is still not done is citing a scholarly source per station. That is a
 larger job: a reference book per name, and a rewrite wherever it disagrees.
 
+## Analytics
+
+Vercel Web Analytics is wired in as a plain script tag in `index.html`:
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+Vercel's own instructions are for React — install `@vercel/analytics`, render an
+`<Analytics/>` component — but that package does nothing except inject this
+script, and using it would mean adding React, a bundler and a build step to a
+site that has none. The tag is the same thing without any of that.
+
+Two things it needs: Web Analytics switched on for the project in the Vercel
+dashboard, and the site actually served from Vercel. The file is served from
+Vercel's edge, so it 404s locally and anywhere else — harmless, since the tag
+is deferred and nothing depends on it.
+
 ## Routing
 
 Dijkstra over `(station, line)` states rather than plain stations, so that
