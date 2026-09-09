@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>London Tube, Explained</title>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+<div id="map-wrap">
+  <svg id="map" aria-label="Map of the London Underground">
+    <defs>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="2.2" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g id="g-transfers"></g>
+    <g id="g-edges"></g>
+    <g id="g-route"></g>
+    <g id="g-stations"></g>
+    <g id="g-labels"></g>
+    <g id="g-train"></g>
+  </svg>
+</div>
+
+<header id="title">
+  <h1>London Tube, <em>Explained</em></h1>
+  <p>Why every station is called what it&rsquo;s called &mdash; all 270 of them.</p>
+</header>
+
+<section id="goto" aria-label="Go to a station">
+  <div class="goto-row">
+    <label for="search">Go to</label>
+    <div class="combo">
+      <input id="search" type="text" autocomplete="off" spellcheck="false"
+             placeholder="Search a station&hellip;" role="combobox"
+             aria-expanded="false" aria-controls="results" aria-autocomplete="list">
+      <button id="clear" type="button" aria-label="Clear">&times;</button>
+      <ul id="results" role="listbox" hidden></ul>
+    </div>
+  </div>
+</section>
+
+
+<aside id="panel" aria-live="polite">
+  <div id="panel-inner"></div>
+</aside>
+
+<div id="controls">
+  <button id="btn-overview" type="button">Whole map</button>
+  <button id="btn-random" type="button">Surprise me</button>
+  <button id="btn-layout" type="button">Geographic</button>
+  <button id="btn-legend" type="button" aria-expanded="false">Lines</button>
+  <div id="legend" hidden></div>
+</div>
+
+<div id="hint">Drag to pan &middot; scroll to zoom &middot; click any station</div>
+
+<script src="data/network.js?v=3"></script>
+<script src="data/schematic.js?v=3"></script>
+<script src="data/etymology.js?v=3"></script>
+<script src="data/sources.js?v=1"></script>
+<script src="app.js?v=3"></script>
+</body>
+</html>
