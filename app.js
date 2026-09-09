@@ -16,6 +16,7 @@
    * can afford to show more of them */
   var STATION_ZOOM = { geographic: 4.0, schematic: 5.6 };
   var CHANGE_PENALTY = 6;    // minutes added for changing line
+  var LINE_WIDTH = 3.4;      // every line, and every route drawn over one
   var TRAIN_SCALE = 1.35;
 
   function lineInfo(id) { return id === 'walk' ? WALK : LINES[id]; }
@@ -405,7 +406,7 @@
       'class': 'edge',
       stroke: lineInfo(g.line).colour,
       'vector-effect': 'non-scaling-stroke',
-      'stroke-width': 3.4
+      'stroke-width': LINE_WIDTH
     });
     gEdges.appendChild(g.el);
   });
@@ -747,14 +748,14 @@
       var colour = lineInfo(s.line).colour;
       var plan = el('path', {
         'class': 'route-leg', stroke: colour,
-        'vector-effect': 'non-scaling-stroke', 'stroke-width': 7,
+        'vector-effect': 'non-scaling-stroke', 'stroke-width': LINE_WIDTH,
         d: edgePath(g, lastSpread)
       });
       var forward = s.from === g.a;
       var ride = ridePath(g, lastSpread, forward);
       var done = el('path', {
         'class': 'route-leg done', stroke: colour,
-        'vector-effect': 'non-scaling-stroke', 'stroke-width': 7,
+        'vector-effect': 'non-scaling-stroke', 'stroke-width': LINE_WIDTH,
         d: pathFrom(ride)
       });
       done.style.strokeDasharray = '0 100000';
@@ -1001,7 +1002,7 @@
               { a: s.from, b: s.to, off: 0, pts: [[P[s.from].x, P[s.from].y], [P[s.to].x, P[s.to].y]] };
       var path = el('path', {
         'class': 'route-leg done trace', stroke: lineInfo(s.line).colour,
-        'vector-effect': 'non-scaling-stroke', 'stroke-width': 6,
+        'vector-effect': 'non-scaling-stroke', 'stroke-width': LINE_WIDTH,
         d: edgePath(g, lastSpread)
       });
       gDone.appendChild(path);
