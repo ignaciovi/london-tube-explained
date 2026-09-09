@@ -49,6 +49,9 @@ html, body {
 
 /* interchanges are hollow rings, ordinary stations solid dots — the
    convention every printed tube map uses on white paper */
+/* the traveller fades in when it first appears, rather than popping */
+#train { transition: opacity 0.4s ease; }
+
 .stop { cursor: pointer; }
 .stop.interchange { fill: #fff; stroke: var(--ink); }
 .stop.plain { fill: #4d5760; stroke: #fff; }

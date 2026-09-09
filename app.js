@@ -671,11 +671,17 @@
 
   function parkTrain(id, angle) {
     var p = P[id];
+    var wasHidden = train.style.display === 'none';
     /* sit the little train just beside the station dot */
     trainPos = { x: p.x - 30 * unitsPerPx, y: p.y - 26 * unitsPerPx,
                  angle: angle || 0, walking: false };
     train.style.display = '';
     placeTrain();
+    if (wasHidden) {
+      /* arriving from nothing: fade rather than pop, in step with the panel */
+      train.style.opacity = '0';
+      requestAnimationFrame(function () { train.style.opacity = '1'; });
+    }
   }
 
   /* ------------------------------------------------------------------
@@ -936,7 +942,8 @@
     if (!current) {                       // first arrival: just fly in
       setCurrent(id);
       panel.classList.remove('show');
-      parkTrain(id);
+      /* the train only appears once the map has settled — parking it before
+       * the fly-in leaves it sitting on the whole map for the whole descent */
       tweenTo({ cx: P[id].x, cy: P[id].y, w: stationW }, 2200, function () {
         parkTrain(id);
         showStation(id);
