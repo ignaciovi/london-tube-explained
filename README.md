@@ -79,7 +79,10 @@ a derivation is uncertain the opener carries the hedge ("The name comes, most
 probably, from...") rather than dropping it.
 
 Where a name comes from a word, the text gives the word and what it meant, and
-where that word came from if it was itself borrowed. Where it comes from a
+where that word came from if it was itself borrowed. A word standing in for
+itself is quoted — “Court” replaced “hall” in the name — because otherwise it
+reads as an ordinary word of the sentence. Foreign roots are left bare: the
+diacritics and the phrasing around them already mark those as cited forms. Where it comes from a
 person, who they were. Nothing about when the station opened, who designed it or
 what happened there.
 

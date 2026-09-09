@@ -14,7 +14,7 @@ const ETYMOLOGY = {
   "acton-town": {
     gist: "“The farmstead by the oak trees”.",
     chain: ["Actune (1181)", "Acton", "Acton Town"],
-    text: "The name comes from Old English āc, an oak, and tūn, a farmstead — the farm cleared out of the oak woods that covered west Middlesex. Town was added in 1910 because the railways had by then produced half a dozen Actons, and this was the one at the old village centre."
+    text: "The name comes from Old English āc, an oak, and tūn, a farmstead — the farm cleared out of the oak woods that covered west Middlesex. “Town” was added in 1910 because the railways had by then produced half a dozen Actons, and this was the one at the old village centre."
   },
   "aldgate": {
     gist: "One of the gates through the City wall — but which kind of gate is disputed.",
@@ -29,7 +29,7 @@ const ETYMOLOGY = {
   "alperton": {
     gist: "“The farmstead of Ealhbeorht's people”.",
     chain: ["Alprinton (1199)", "Alperton"],
-    text: "The name comes from a man called Ealhbeorht who held land here in the Anglo-Saxon period: his name, plus the connecting -ing- meaning “the people of”, plus tūn, a farmstead. Five syllables wore down to three."
+    text: "The name comes from a man called Ealhbeorht who held land here in the Anglo-Saxon period: his name, plus the connecting “-ing-” meaning “the people of”, plus tūn, a farmstead. Five syllables wore down to three."
   },
   "amersham": {
     gist: "“The homestead of a man called Ealhmund”.",
@@ -52,7 +52,7 @@ const ETYMOLOGY = {
   "arsenal": {
     gist: "The football club, which took its name from a weapons factory.",
     chain: ["Gillespie Road (1906)", "Arsenal (Highbury Hill)", "Arsenal"],
-    text: "The station is named after Arsenal FC, founded in 1886 by workers at the Royal Arsenal in Woolwich, who carried the factory's name north when the club moved to Highbury in 1913. Arsenal means a store or workshop of weapons, and reached English through Italian arzanale from Arabic dar as-sina'a, “house of manufacture”. The station was Gillespie Road until the club's manager Herbert Chapman had it renamed in 1932."
+    text: "The station is named after Arsenal FC, founded in 1886 by workers at the Royal Arsenal in Woolwich, who carried the factory's name north when the club moved to Highbury in 1913. “Arsenal” means a store or workshop of weapons, and reached English through Italian arzanale from Arabic dar as-sina'a, “house of manufacture”. The station was Gillespie Road until the club's manager Herbert Chapman had it renamed in 1932."
   },
   "baker-street": {
     gist: "William Baker, the builder who laid the street out.",
@@ -76,13 +76,13 @@ const ETYMOLOGY = {
   "barking": {
     gist: "“The settlement of Berica's people”.",
     chain: ["Berecingas (c.730)", "Berchinges (1086)", "Barking"],
-    text: "The name comes from a man called Berica and the Old English suffix -ingas, “the people or followers of” — one of the oldest layers of English place-naming, in which a group is identified by the man who led them.",
+    text: "The name comes from a man called Berica and the Old English suffix “-ingas”, “the people or followers of” — one of the oldest layers of English place-naming, in which a group is identified by the man who led them.",
     note: "The personal name is inferred rather than attested. An alternative reads the first element as beorc, “birch”, giving “the people of the birch place”. The group name is not in doubt; its owner is."
   },
   "barkingside": {
     gist: "The side of the parish nearest Barking.",
     chain: ["Barkyngsyde (1538)", "Barkingside"],
-    text: "Originally referring to the part of Ilford that lay on the side facing Barking, the parish that administered it. Side in this sense — the district over that way — was ordinary usage."
+    text: "Originally referring to the part of Ilford that lay on the side facing Barking, the parish that administered it. “Side” in this sense — the district over that way — was ordinary usage."
   },
   "barons-court": {
     gist: "A name invented by a developer in the 1870s.",
@@ -117,7 +117,7 @@ const ETYMOLOGY = {
   "bethnal-green": {
     gist: "“Blitha's corner of land”, and the hamlet green.",
     chain: ["Blithehale (1231)", "Blithenhale (1443)", "Bethnal Green"],
-    text: "The name comes from Old English halh, a nook or corner of land, with a first element that is either a personal name, Blitha, or the word blīthe, pleasant. Green is the common the hamlet grew around, added once the settlement had outgrown the corner."
+    text: "The name comes from Old English halh, a nook or corner of land, with a first element that is either a personal name, Blitha, or the word “blīthe”, pleasant. “Green” is the common the hamlet grew around, added once the settlement had outgrown the corner."
   },
   "blackfriars": {
     gist: "The Dominican friary, whose friars wore black.",
@@ -154,7 +154,7 @@ const ETYMOLOGY = {
   },
   "brent-cross": {
     gist: "The crossing of the River Brent.",
-    text: "The name comes from the River Brent, which is older than English: a British word related to the goddess-name Brigantia, meaning “high one” or “holy one”. River names are the most durable layer of British place-names, often outliving every change of language around them. Cross is the road crossing; the station was called simply Brent until 1976."
+    text: "The name comes from the River Brent, which is older than English: a British word related to the goddess-name Brigantia, meaning “high one” or “holy one”. River names are the most durable layer of British place-names, often outliving every change of language around them. “Cross” is the road crossing; the station was called simply Brent until 1976."
   },
   "brixton": {
     gist: "“The stone of a man called Beorhtsige”.",
@@ -169,7 +169,7 @@ const ETYMOLOGY = {
   "buckhurst-hill": {
     gist: "“The beech wood”, on a hill.",
     chain: ["Bocherst (1135)", "Buckhurst"],
-    text: "The name comes from Old English bōc, a beech tree, and hyrst, a wooded hill — the beeches of what is now Epping Forest. The same bōc gives the word book, from the beech boards early writings were bound between."
+    text: "The name comes from Old English bōc, a beech tree, and hyrst, a wooded hill — the beeches of what is now Epping Forest. The same bōc gives the word “book”, from the beech boards early writings were bound between."
   },
   "burnt-oak": {
     gist: "A burnt oak tree that marked a boundary.",
@@ -210,7 +210,7 @@ const ETYMOLOGY = {
   "chalfont-and-latimer": {
     gist: "“The calves' spring”, and a manor held by the Latimer family.",
     chain: ["Celfunte (1086)", "Chalfhunte", "Chalfont"],
-    text: "The name comes from Old English cealf, a calf, and funta, a spring — a word borrowed from Latin fontana and used specifically for springs the Romans had built up. Latimer comes from the family who held the manor, whose surname was occupational: a latimer was an interpreter or Latin-speaker. The place was Isenhampstead Latimer until the 19th century."
+    text: "The name comes from Old English cealf, a calf, and funta, a spring — a word borrowed from Latin fontana and used specifically for springs the Romans had built up. “Latimer” comes from the family who held the manor, whose surname was occupational: a latimer was an interpreter or Latin-speaker. The place was Isenhampstead Latimer until the 19th century."
   },
   "chalk-farm": {
     gist: "A corruption of Chalcots, “the cold cottages”.",
@@ -247,7 +247,7 @@ const ETYMOLOGY = {
   "chorleywood": {
     gist: "“The wood of the ceorls” — the free peasants.",
     chain: ["Charleywood (1524)", "Chorleywood"],
-    text: "The name comes from Old English ceorla lēah, the clearing of the ceorls — free men of the lowest rank, who held it in common rather than under a lord. The word survives in modern English as churl. Wood was added later, once lēah had stopped meaning anything to the people saying it."
+    text: "The name comes from Old English ceorla lēah, the clearing of the ceorls — free men of the lowest rank, who held it in common rather than under a lord. The word survives in modern English as “churl”. “Wood” was added later, once lēah had stopped meaning anything to the people saying it."
   },
   "clapham-common": {
     gist: "“The homestead by the hill”, and its common land.",
@@ -261,11 +261,11 @@ const ETYMOLOGY = {
   },
   "clapham-south": {
     gist: "The southern of the three Claphams.",
-    text: "The name comes from Old English clopp, a hill, and hām, a homestead. South distinguishes this station from Clapham Common and Clapham North, all three on the same stretch of line."
+    text: "The name comes from Old English clopp, a hill, and hām, a homestead. “South” distinguishes this station from Clapham Common and Clapham North, all three on the same stretch of line."
   },
   "cockfosters": {
     gist: "Probably “chief forester” — the head forester of Enfield Chase.",
-    text: "The name comes, most probably, from the chief forester of Enfield Chase, the royal hunting ground on whose edge the place stands. Cock was used in the sense of chief or leading — as in cock of the walk — and foster is a worn-down form of forester.",
+    text: "The name comes, most probably, from the chief forester of Enfield Chase, the royal hunting ground on whose edge the place stands. “Cock” was used in the sense of chief or leading — as in “cock of the walk” — and “foster” is a worn-down form of “forester”.",
     note: "The alternative is that Cockfoster was simply the surname of a family holding land here. Since “chief forester” would itself explain such a surname, the two readings are hard to separate."
   },
   "colindale": {
@@ -291,7 +291,7 @@ const ETYMOLOGY = {
   "dagenham-east": {
     gist: "“Dæcca's homestead”.",
     chain: ["Dæccanhaam (692)", "Dakenham", "Dagenham"],
-    text: "The name comes from a man called Dæcca and Old English hām, a homestead or village. East was added in 1949 to separate this station from the other two the growth of the area had produced."
+    text: "The name comes from a man called Dæcca and Old English hām, a homestead or village. “East” was added in 1949 to separate this station from the other two the growth of the area had produced."
   },
   "dagenham-heathway": {
     gist: "The Heathway — the road across Dagenham Heath.",
@@ -300,7 +300,7 @@ const ETYMOLOGY = {
   "debden": {
     gist: "“The deep valley”.",
     chain: ["Deppedana (1062)", "Depden", "Debden"],
-    text: "The name comes from Old English dēop, deep, and denu, a valley — the ordinary Anglo-Saxon word for a long narrow one, as distinct from a dell or a hollow. The p softened to b in speech."
+    text: "The name comes from Old English dēop, deep, and denu, a valley — the ordinary Anglo-Saxon word for a long narrow one, as distinct from a dell or a hollow. The “p” softened to b in speech."
   },
   "dollis-hill": {
     gist: "A hill by the Dollis Brook — but Dollis itself is obscure.",
@@ -311,11 +311,11 @@ const ETYMOLOGY = {
   "ealing-broadway": {
     gist: "“The people of Gilla”, and the broad street at their centre.",
     chain: ["Gillingas (c.700)", "Yilling", "Zeallyng", "Ealing"],
-    text: "The name comes from a man called Gilla and the Old English suffix -ingas, “the people or followers of”. The hard G at the front softened to a Y sound and then vanished altogether, which is why the modern spelling gives no hint of him. A broadway is simply a wide street."
+    text: "The name comes from a man called Gilla and the Old English suffix “-ingas”, “the people or followers of”. The hard G at the front softened to a Y sound and then vanished altogether, which is why the modern spelling gives no hint of him. A broadway is simply a wide street."
   },
   "ealing-common": {
     gist: "Ealing's surviving common land.",
-    text: "The name comes from a man called Gilla and Old English -ingas, “the people of”. A common is ground over which a manor's tenants held rights of grazing; this is the part that escaped enclosure."
+    text: "The name comes from a man called Gilla and Old English “-ingas”, “the people of”. A common is ground over which a manor's tenants held rights of grazing; this is the part that escaped enclosure."
   },
   "earl-s-court": {
     gist: "The manor court of the Earls of Oxford.",
@@ -370,13 +370,13 @@ const ETYMOLOGY = {
   },
   "embankment": {
     gist: "The Victoria Embankment — land reclaimed from the Thames.",
-    text: "The station is named after the Victoria Embankment, the wall Joseph Bazalgette built between 1862 and 1870 to confine the Thames, narrowing the river and reclaiming thirty-two acres of foreshore. To embank is to hold water behind a raised bank; the word comes through French from the same root as bank."
+    text: "The station is named after the Victoria Embankment, the wall Joseph Bazalgette built between 1862 and 1870 to confine the Thames, narrowing the river and reclaiming thirty-two acres of foreshore. To “embank” is to hold water behind a raised bank; the word comes through French from the same root as bank."
   },
   "epping": {
     gist: "“The people of the upland”.",
     chain: ["Eppinges (1086)", "Epping"],
-    text: "The name comes, probably, from Old English yppe, a raised or lookout place, and -ingas, “the people of” — the settlers on the high ground above the forest, named for where they lived rather than for a man.",
-    note: "The alternative reads the first element as a personal name, giving “Eppa's people”, which would make it an ordinary -ingas name of the commonest kind."
+    text: "The name comes, probably, from Old English yppe, a raised or lookout place, and “-ingas”, “the people of” — the settlers on the high ground above the forest, named for where they lived rather than for a man.",
+    note: "The alternative reads the first element as a personal name, giving “Eppa's people”, which would make it an ordinary “-ingas” name of the commonest kind."
   },
   "euston": {
     gist: "Euston Hall in Suffolk, the seat of the landowning Dukes of Grafton.",
@@ -389,7 +389,7 @@ const ETYMOLOGY = {
   },
   "fairlop": {
     gist: "The Fairlop Oak, a celebrated tree in Hainault Forest.",
-    text: "The name comes from the Fairlop Oak, a vast tree with branches spreading some three hundred feet that stood here until it was blown down in 1820. Lop means the branches cut from a tree, and one regularly lopped for timber and firewood took a shape distinctive enough to name the place.",
+    text: "The name comes from the Fairlop Oak, a vast tree with branches spreading some three hundred feet that stood here until it was blown down in 1820. “Lop” means the branches cut from a tree, and one regularly lopped for timber and firewood took a shape distinctive enough to name the place.",
     note: "The exact sense is uncertain. The likeliest reading is “the fair — that is, handsome — lopped tree”, but the tree may equally have taken its name from an existing field name rather than the other way round."
   },
   "farringdon": {
@@ -400,7 +400,7 @@ const ETYMOLOGY = {
   "finchley-central": {
     gist: "“The finches' clearing”.",
     chain: ["Finchelee (c.1208)", "Fynchesle", "Finchley"],
-    text: "The name comes from Old English finc, a finch, and lēah, a clearing in woodland. Central distinguishes this station from East, West and North Finchley, all named from the same clearing."
+    text: "The name comes from Old English finc, a finch, and lēah, a clearing in woodland. “Central” distinguishes this station from East, West and North Finchley, all named from the same clearing."
   },
   "finchley-road": {
     gist: "The road built towards Finchley.",
@@ -445,7 +445,7 @@ const ETYMOLOGY = {
   "great-portland-street": {
     gist: "The Dukes of Portland, ground landlords of Marylebone.",
     chain: ["Portland Road (1863)", "Great Portland Street"],
-    text: "The station is named after the Dukes of Portland, whose family acquired the Marylebone estate by marriage in 1734 and laid out streets across it under their title. Great distinguishes the main street from Little Portland Street beside it."
+    text: "The station is named after the Dukes of Portland, whose family acquired the Marylebone estate by marriage in 1734 and laid out streets across it under their title. “Great” distinguishes the main street from Little Portland Street beside it."
   },
   "green-park": {
     gist: "The park that is only green — it has no flower beds.",
@@ -478,7 +478,7 @@ const ETYMOLOGY = {
   "hampstead": {
     gist: "Old English hām-stede — simply “the homestead”.",
     chain: ["Hemstede (959)", "Hamstede", "Hampstead"],
-    text: "The name comes from Old English hām, a home or village, and stede, a place: hām-stede was the ordinary Anglo-Saxon word for a farmstead, applied here without qualification. The p is a later intrusion, the mouth's shortcut between m and s, as in Thompson."
+    text: "The name comes from Old English hām, a home or village, and stede, a place: hām-stede was the ordinary Anglo-Saxon word for a farmstead, applied here without qualification. The “p” is a later intrusion, the mouth's shortcut between m and s, as in Thompson."
   },
   "hanger-lane": {
     gist: "Old English hangra — a wood on a steep slope.",
@@ -488,12 +488,12 @@ const ETYMOLOGY = {
   "harlesden": {
     gist: "“Herewulf's farmstead”.",
     chain: ["Herulvestune (1086)", "Harleston", "Harlesden"],
-    text: "The name comes from a man called Herewulf and Old English tūn, a farmstead. The final -tune drifting to -den is a common late change, the ending pulled towards a more familiar word."
+    text: "The name comes from a man called Herewulf and Old English tūn, a farmstead. The final “-tune” drifting to “-den” is a common late change, the ending pulled towards a more familiar word."
   },
   "harrow-and-wealdstone": {
     gist: "A pagan shrine, and a boundary stone at the edge of the weald.",
     chain: ["Gumeninga hergae (767)", "Herges", "Harrow"],
-    text: "The name comes from Old English hearg, a heathen temple or holy place — this is one of very few English place-names to record pre-Christian worship, the shrine of a people called the Gumeningas. Wealdstone is a stone that marked the boundary of the weald, the wooded country; weald is the same word as German Wald, forest."
+    text: "The name comes from Old English hearg, a heathen temple or holy place — this is one of very few English place-names to record pre-Christian worship, the shrine of a people called the Gumeningas. Wealdstone is a stone that marked the boundary of the weald, the wooded country; “weald” is the same word as German “Wald”, forest."
   },
   "harrow-on-the-hill": {
     gist: "The same pagan shrine — on its hill.",
@@ -501,7 +501,7 @@ const ETYMOLOGY = {
   },
   "hatton-cross": {
     gist: "“The heath farmstead”, at a crossroads.",
-    text: "The name comes from Old English hǣth, heath, and tūn, a farmstead — the farm out on Hounslow Heath, the open scrubby common that covered this part of Middlesex. Cross is the crossroads beside it."
+    text: "The name comes from Old English hǣth, heath, and tūn, a farmstead — the farm out on Hounslow Heath, the open scrubby common that covered this part of Middlesex. “Cross” is the crossroads beside it."
   },
   "heathrow-terminal-4": {
     gist: "The airport's fourth terminal.",
@@ -519,17 +519,17 @@ const ETYMOLOGY = {
   "hendon-central": {
     gist: "Old English æt hēan dūne — “at the high hill”.",
     chain: ["Hendun (959)", "Hendon"],
-    text: "The name comes from the Old English phrase æt hēan dūne, “at the high hill”, frozen into a name — which is why the adjective comes first and the old ending survives. The hill is the one St Mary's church stands on. Central was added because the station was built to serve a new town centre."
+    text: "The name comes from the Old English phrase æt hēan dūne, “at the high hill”, frozen into a name — which is why the adjective comes first and the old ending survives. The hill is the one St Mary's church stands on. “Central” was added because the station was built to serve a new town centre."
   },
   "high-barnet": {
     gist: "“Land cleared by burning”, on the high ground.",
     chain: ["Barnet (1070)", "Chipping Barnet", "High Barnet"],
-    text: "The name comes from Old English bærnet, a burning: woodland cleared by fire to make arable, a practice ordinary enough to name several places. High distinguishes it from Friern Barnet and East Barnet; the town is also called Chipping Barnet, from Old English cēping, a market."
+    text: "The name comes from Old English bærnet, a burning: woodland cleared by fire to make arable, a practice ordinary enough to name several places. “High” distinguishes it from Friern Barnet and East Barnet; the town is also called Chipping Barnet, from Old English cēping, a market."
   },
   "high-street-kensington": {
     gist: "Kensington's high street — “the farmstead of Cynesige's people”.",
     chain: ["Chenesitun (1086)", "Kensington"],
-    text: "The name comes from a man called Cynesige, plus the connecting -ing- meaning “the people of”, plus Old English tūn, a farmstead. A high street is the principal street of a town, high in the sense of chief."
+    text: "The name comes from a man called Cynesige, plus the connecting “-ing-” meaning “the people of”, plus Old English tūn, a farmstead. A high street is the principal street of a town, “high” in the sense of chief."
   },
   "highbury-and-islington": {
     gist: "“The high manor house”, and “Gīsla's hill”.",
@@ -544,12 +544,12 @@ const ETYMOLOGY = {
   "hillingdon": {
     gist: "“Hilda's hill”.",
     chain: ["Hillendone (1086)", "Hillingdon"],
-    text: "The name comes from a man called Hilda — here a man's name — and Old English dūn, a hill. The doubled hill of the modern spelling is an accident: -don had stopped being recognisable as the word for a hill long before the name was fixed."
+    text: "The name comes from a man called Hilda — here a man's name — and Old English dūn, a hill. The doubled hill of the modern spelling is an accident: “-don” had stopped being recognisable as the word for a hill long before the name was fixed."
   },
   "holborn": {
     gist: "The “hollow bourne” — a stream in a deep valley.",
     chain: ["Holburne (959)", "Holbourne", "Holborn"],
-    text: "The name comes from Old English hol, hollow or sunken, and burna, a stream — the Fleet, or its upper reach, which ran through a valley steep enough that a viaduct had to be built over it in the 19th century. Burna survives in Scots burn and in dozens of southern place-names."
+    text: "The name comes from Old English hol, hollow or sunken, and burna, a stream — the Fleet, or its upper reach, which ran through a valley steep enough that a viaduct had to be built over it in the 19th century. “Burna” survives in Scots “burn” and in dozens of southern place-names."
   },
   "holland-park": {
     gist: "Holland House, seat of the Earls of Holland.",
@@ -570,11 +570,11 @@ const ETYMOLOGY = {
   "hounslow-central": {
     gist: "“Hund's burial mound”.",
     chain: ["Hundeslawe (1217)", "Hounslow"],
-    text: "The name comes from a man called Hund and Old English hlāw, a mound — usually a prehistoric barrow, which the Anglo-Saxons found already in the landscape and used as meeting points and boundary markers. Central distinguishes this station from Hounslow East and West."
+    text: "The name comes from a man called Hund and Old English hlāw, a mound — usually a prehistoric barrow, which the Anglo-Saxons found already in the landscape and used as meeting points and boundary markers. “Central” distinguishes this station from Hounslow East and West."
   },
   "hounslow-east": {
     gist: "The eastern station of the Hounslow group.",
-    text: "The name comes from a man called Hund and Old English hlāw, a burial mound. East distinguishes this station from Hounslow Central and Hounslow West."
+    text: "The name comes from a man called Hund and Old English hlāw, a burial mound. “East” distinguishes this station from Hounslow Central and Hounslow West."
   },
   "hounslow-west": {
     gist: "The western station of the Hounslow group.",
@@ -594,12 +594,12 @@ const ETYMOLOGY = {
     gist: "Either “the king's farmstead” or “the farmstead of Cēna's people”.",
     chain: ["Chenintune (1086)", "Kenington", "Kennington"],
     text: "The name comes either from Old English cyning, a king, or from a man called Cēna and his people — the two readings compete. Kennington was a royal manor, and the Black Prince built a palace here in the 1340s, which makes the royal version tempting.",
-    note: "Place-name scholars generally prefer a personal name, Cēna, because of the connecting -ing- in the early forms, which usually signals “the people of”. The royal reading, from Old English cyning, is favoured by local historians pointing to the manor's long Crown ownership. The ownership is real; whether it produced the name is not established."
+    note: "Place-name scholars generally prefer a personal name, Cēna, because of the connecting “-ing-” in the early forms, which usually signals “the people of”. The royal reading, from Old English cyning, is favoured by local historians pointing to the manor's long Crown ownership. The ownership is real; whether it produced the name is not established."
   },
   "kensal-green": {
     gist: "“The king's wood”.",
     chain: ["Kingisholt (1253)", "Kynsale", "Kensal Green"],
-    text: "The name comes from Old English cyning, king, and holt, a wood. Both words were worn past recognition — Kingisholt to Kensal in three centuries — which is what happens to a name once the things it describes have gone. Green is the surviving common."
+    text: "The name comes from Old English cyning, king, and holt, a wood. Both words were worn past recognition — Kingisholt to Kensal in three centuries — which is what happens to a name once the things it describes have gone. “Green” is the surviving common."
   },
   "kensington-olympia": {
     gist: "Kensington, plus the Olympia exhibition hall.",
@@ -639,7 +639,7 @@ const ETYMOLOGY = {
   "kingsbury": {
     gist: "“The king's manor”.",
     chain: ["Kynggesbyrig (1044)", "Kingsbury"],
-    text: "The name comes from Old English cyning, king, and burh, a fortified place or manor house — an estate held by the Crown. The -bury ending is the dative form of burh, frozen from phrases like “at the manor”."
+    text: "The name comes from Old English cyning, king, and burh, a fortified place or manor house — an estate held by the Crown. The “-bury” ending is the dative form of burh, frozen from phrases like “at the manor”."
   },
   "knightsbridge": {
     gist: "“The bridge of the young men” — over the buried Westbourne.",
@@ -654,7 +654,7 @@ const ETYMOLOGY = {
   "lambeth-north": {
     gist: "“The landing place for lambs”.",
     chain: ["Lambehitha (1041)", "Lambeth"],
-    text: "The name comes from Old English lamb and hȳth, a landing place on a river — a wharf where sheep were loaded and unloaded. The th of the modern spelling is the worn remains of hȳth, the same element that ends Rotherhithe."
+    text: "The name comes from Old English lamb and hȳth, a landing place on a river — a wharf where sheep were loaded and unloaded. The “th” of the modern spelling is the worn remains of hȳth, the same element that ends Rotherhithe."
   },
   "lancaster-gate": {
     gist: "A gate into Kensington Gardens, named for the Duchy of Lancaster.",
@@ -689,7 +689,7 @@ const ETYMOLOGY = {
   "loughton": {
     gist: "“Luca's farmstead”.",
     chain: ["Lukintone (1062)", "Lucketon", "Loughton"],
-    text: "The name comes from a man called Luca, plus the connecting -ing- and Old English tūn, a farmstead: “the farm of Luca's people”. The gh of the modern spelling represents a throat sound that has since gone silent."
+    text: "The name comes from a man called Luca, plus the connecting “-ing-” and Old English tūn, a farmstead: “the farm of Luca's people”. The “gh” of the modern spelling represents a throat sound that has since gone silent."
   },
   "maida-vale": {
     gist: "A battle in Italy, by way of a pub.",
@@ -720,7 +720,7 @@ const ETYMOLOGY = {
   "mill-hill-east": {
     gist: "The hill with the windmill.",
     chain: ["Myllehill (1547)", "Mill Hill"],
-    text: "The name comes from a windmill on the hill. Windmills needed open high ground, and a hill carrying one was identified by it. East distinguishes the station from Mill Hill Broadway on the other side."
+    text: "The name comes from a windmill on the hill. Windmills needed open high ground, and a hill carrying one was identified by it. “East” distinguishes the station from Mill Hill Broadway on the other side."
   },
   "monument": {
     gist: "The column commemorating the Great Fire of 1666.",
@@ -752,7 +752,7 @@ const ETYMOLOGY = {
   "newbury-park": {
     gist: "“The new fortified place”.",
     chain: ["Newbery (1456)", "Newbury Park"],
-    text: "The name comes from Old English nīwe, new, and burh, a fortified place or manor — new in relation to some older one nearby. The -bury ending is the dative of burh, worn smooth by use."
+    text: "The name comes from Old English nīwe, new, and burh, a fortified place or manor — new in relation to some older one nearby. The “-bury” ending is the dative of burh, worn smooth by use."
   },
   "nine-elms": {
     gist: "A row of nine elm trees.",
@@ -760,11 +760,11 @@ const ETYMOLOGY = {
   },
   "north-acton": {
     gist: "The northern part of the oak farmstead.",
-    text: "The name comes from Old English āc, an oak, and tūn, a farmstead — the farm cleared from the oak woods of west Middlesex. North distinguishes this station from the other Actons the railways created."
+    text: "The name comes from Old English āc, an oak, and tūn, a farmstead — the farm cleared from the oak woods of west Middlesex. “North” distinguishes this station from the other Actons the railways created."
   },
   "north-ealing": {
     gist: "North of “the people of Gilla”.",
-    text: "The name comes from a man called Gilla and Old English -ingas, “the people or followers of”. The initial G softened away entirely, which is why the modern name gives no sign of him."
+    text: "The name comes from a man called Gilla and Old English “-ingas”, “the people or followers of”. The initial G softened away entirely, which is why the modern name gives no sign of him."
   },
   "north-greenwich": {
     gist: "The north end of Greenwich — “the green trading settlement”.",
@@ -778,7 +778,7 @@ const ETYMOLOGY = {
   "north-wembley": {
     gist: "North of “Wemba's clearing”.",
     chain: ["Wembalea (825)", "Wembley"],
-    text: "The name comes from a man called Wemba and Old English lēah, a clearing in woodland. North distinguishes this station from Wembley Central and Wembley Park."
+    text: "The name comes from a man called Wemba and Old English lēah, a clearing in woodland. “North” distinguishes this station from Wembley Central and Wembley Park."
   },
   "northfields": {
     gist: "The north fields of Ealing.",
@@ -787,7 +787,7 @@ const ETYMOLOGY = {
   "northolt": {
     gist: "“The northern nook of land” — not, despite the spelling, a wood.",
     chain: ["Northealum (960)", "Northolt"],
-    text: "The name comes from Old English north and healh, a nook or corner of land. Its pair three miles away is Southall, the southern healh — the two were coined together. The modern -holt ending, which suggests a wood, is a late corruption that has misled readers ever since."
+    text: "The name comes from Old English north and healh, a nook or corner of land. Its pair three miles away is Southall, the southern healh — the two were coined together. The modern “-holt” ending, which suggests a wood, is a late corruption that has misled readers ever since."
   },
   "northwick-park": {
     gist: "The Barons Northwick, landowners in Harrow.",
@@ -835,7 +835,7 @@ const ETYMOLOGY = {
   "paddington": {
     gist: "“The farmstead of Padda's people”.",
     chain: ["Padington (c.1050)", "Paddington"],
-    text: "The name comes from a man called Padda and his people, plus Old English tūn, a farmstead — the standard three-part shape that produced hundreds of English -ington names."
+    text: "The name comes from a man called Padda and his people, plus Old English tūn, a farmstead — the standard three-part shape that produced hundreds of English “-ington” names."
   },
   "park-royal": {
     gist: "A royal agricultural showground that barely happened.",
@@ -925,7 +925,7 @@ const ETYMOLOGY = {
   },
   "roding-valley": {
     gist: "The valley of the Roding — a river named after villages, not the reverse.",
-    text: "The name comes from the Essex Rodings, “the people of Hrotha”, an Old English -ingas group name that produced eight villages. The river running past them had no recorded name of its own, so it was eventually called the Roding after the places it flowed through — the opposite of the usual order."
+    text: "The name comes from the Essex Rodings, “the people of Hrotha”, an Old English “-ingas” group name that produced eight villages. The river running past them had no recorded name of its own, so it was eventually called the Roding after the places it flowed through — the opposite of the usual order."
   },
   "royal-oak": {
     gist: "A pub named for the tree Charles II hid in.",
@@ -971,11 +971,11 @@ const ETYMOLOGY = {
     gist: "A brook associated with snares — or with a family called Snare.",
     chain: ["Snaresbrook (1599)", "Snaresbrook"],
     text: "The name comes from a brook on the edge of Epping Forest, but what the first element means is uncertain — the name is recorded late, by which time its sense may already have been lost.",
-    note: "Two readings: the word snare, meaning traps set for wildfowl or game at the water, which suits a forest edge; or the surname Snare, from a family holding land nearby. Neither is documented before the 16th century."
+    note: "Two readings: the word “snare”, meaning traps set for wildfowl or game at the water, which suits a forest edge; or the surname Snare, from a family holding land nearby. Neither is documented before the 16th century."
   },
   "south-ealing": {
     gist: "South of “the people of Gilla”.",
-    text: "The name comes from a man called Gilla and Old English -ingas, “the people or followers of”. The initial G softened away over the centuries, leaving no trace in the modern spelling."
+    text: "The name comes from a man called Gilla and Old English “-ingas”, “the people or followers of”. The initial G softened away over the centuries, leaving no trace in the modern spelling."
   },
   "south-harrow": {
     gist: "South of the pagan shrine on the hill.",
@@ -984,11 +984,11 @@ const ETYMOLOGY = {
   "south-kensington": {
     gist: "The southern part of “Cynesige's people's farmstead”.",
     chain: ["Chenesitun (1086)", "Kensington"],
-    text: "The name comes from a man called Cynesige and his people, plus Old English tūn, a farmstead. South distinguishes this station from High Street Kensington and West Kensington."
+    text: "The name comes from a man called Cynesige and his people, plus Old English tūn, a farmstead. “South” distinguishes this station from High Street Kensington and West Kensington."
   },
   "south-kenton": {
     gist: "South of “Cæna's farmstead”.",
-    text: "The name comes from a man called Cæna and Old English tūn, a farmstead. South distinguishes this station from Kenton and North Wembley on either side."
+    text: "The name comes from a man called Cæna and Old English tūn, a farmstead. “South” distinguishes this station from Kenton and North Wembley on either side."
   },
   "south-ruislip": {
     gist: "South of “the crossing on the rushy river”.",
@@ -1017,7 +1017,7 @@ const ETYMOLOGY = {
   "southwark": {
     gist: "“The southern defensive work”.",
     chain: ["Suthringa geweorche (c.1000)", "Suthgeweorc", "Southwark"],
-    text: "The name comes from Old English sūth and weorc, a fortification guarding the southern bridgehead of London Bridge. The earliest recorded form means “the fort of the men of Surrey”. Weorc is the same word as modern work, in its older sense of something built."
+    text: "The name comes from Old English sūth and weorc, a fortification guarding the southern bridgehead of London Bridge. The earliest recorded form means “the fort of the men of Surrey”. “Weorc” is the same word as modern “work”, in its older sense of something built."
   },
   "st-james-s-park": {
     gist: "A leper hospital dedicated to St James the Less.",
@@ -1035,17 +1035,17 @@ const ETYMOLOGY = {
   "stamford-brook": {
     gist: "“The stony ford” over the brook.",
     chain: ["Staneford (1274)", "Stamford Brook"],
-    text: "The name comes from Old English stān, stone, and ford: a crossing with a firm stony bed, worth naming in a district of soft mud. The n shifted to m in speech, as it did in Stamford in Lincolnshire."
+    text: "The name comes from Old English stān, stone, and ford: a crossing with a firm stony bed, worth naming in a district of soft mud. The “n” shifted to m in speech, as it did in Stamford in Lincolnshire."
   },
   "stanmore": {
     gist: "“The stony pool”.",
     chain: ["Stanmere (1086)", "Stanmore"],
-    text: "The name comes from Old English stān, stone, and mere, a pool — one with a gravelly bed rather than a muddy one. Mere drifted to -more once the word had dropped out of everyday use."
+    text: "The name comes from Old English stān, stone, and mere, a pool — one with a gravelly bed rather than a muddy one. “Mere” drifted to “-more” once the word had dropped out of everyday use."
   },
   "stepney-green": {
     gist: "“Stybba's landing place”, and the hamlet green.",
     chain: ["Stybbanhyþe (c.1000)", "Stebenhithe", "Stepney"],
-    text: "The name comes from a man called Stybba and Old English hȳth, a wharf or landing place on the Thames. Three syllables wore down to two, and the hȳth became an unrecognisable -ney. Green is the hamlet's common."
+    text: "The name comes from a man called Stybba and Old English hȳth, a wharf or landing place on the Thames. Three syllables wore down to two, and the hȳth became an unrecognisable “-ney”. “Green” is the hamlet's common."
   },
   "stockwell": {
     gist: "“The well by the tree stump”.",
@@ -1054,7 +1054,7 @@ const ETYMOLOGY = {
   },
   "stonebridge-park": {
     gist: "A stone bridge over the River Brent.",
-    text: "Originally referring to a bridge of stone by which the Harrow Road crossed the River Brent, notable enough in a district of wooden ones to identify the place. Park was added by the developers who built the estate."
+    text: "Originally referring to a bridge of stone by which the Harrow Road crossed the River Brent, notable enough in a district of wooden ones to identify the place. “Park” was added by the developers who built the estate."
   },
   "stratford": {
     gist: "“The ford on the Roman road”.",
@@ -1068,7 +1068,7 @@ const ETYMOLOGY = {
   },
   "sudbury-town": {
     gist: "The same southern manor, at its centre.",
-    text: "The name comes from Old English sūth, south, and burh, a manor — the manor south of Harrow. Town marks the settlement's centre, distinguishing this station from Sudbury Hill."
+    text: "The name comes from Old English sūth, south, and burh, a manor — the manor south of Harrow. “Town” marks the settlement's centre, distinguishing this station from Sudbury Hill."
   },
   "swiss-cottage": {
     gist: "A pub built to look like a Swiss chalet.",
@@ -1081,22 +1081,22 @@ const ETYMOLOGY = {
   "theydon-bois": {
     gist: "“The valley where thatch grows”, held by the de Bosco family.",
     chain: ["Teidena (1086)", "Theydon Boys", "Theydon Bois"],
-    text: "The name comes from Old English thæc, thatch or roofing straw, and denu, a valley — a valley that supplied roofing material. Bois comes from the de Bosco family, who held the manor from the 12th century, distinguishing it from Theydon Garnon and Theydon Mount. It is still pronounced “Boys”.",
+    text: "The name comes from Old English thæc, thatch or roofing straw, and denu, a valley — a valley that supplied roofing material. “Bois” comes from the de Bosco family, who held the manor from the 12th century, distinguishing it from Theydon Garnon and Theydon Mount. It is still pronounced “Boys”.",
     note: "Because Latin boscus means wood, some accounts read the suffix as describing the trees of Epping Forest rather than the family. The family is documented, so the surname reading is preferred."
   },
   "tooting-bec": {
     gist: "“The people of Tota”, and the Norman abbey of Bec.",
     chain: ["Totinge (1086)", "Toting Bek", "Tooting Bec"],
-    text: "The name comes from a man called Tota and Old English -ingas, “the people or followers of”. Bec is the abbey of Bec-Hellouin in Normandy, which was granted the manor after the Conquest; its name distinguished this Tooting from Tooting Graveney, held by the de Gravenel family."
+    text: "The name comes from a man called Tota and Old English “-ingas”, “the people or followers of”. “Bec” is the abbey of Bec-Hellouin in Normandy, which was granted the manor after the Conquest; its name distinguished this Tooting from Tooting Graveney, held by the de Gravenel family."
   },
   "tooting-broadway": {
     gist: "The broad junction at the centre of Tooting.",
-    text: "The name comes from a man called Tota and Old English -ingas, “the people of”. A broadway is simply a wide street — the name given to the junction where the roads meet."
+    text: "The name comes from a man called Tota and Old English “-ingas”, “the people of”. A broadway is simply a wide street — the name given to the junction where the roads meet."
   },
   "tottenham-court-road": {
     gist: "Not Tottenham — the road to the manor house of Tottenhall.",
     chain: ["Totehele (1170)", "Tottenhall", "Totten Court", "Tottenham Court"],
-    text: "The name comes from a man called Totta, whose hall stood near the top of the road. Court replaced hall in the name, and the whole thing was then pulled towards the better-known Tottenham seven miles north — which is a different Totta's hām altogether. The confusion is six centuries old and permanent."
+    text: "The name comes from a man called Totta, whose hall stood near the top of the road. “Court” replaced “hall” in the name, and the whole thing was then pulled towards the better-known Tottenham seven miles north — which is a different Totta's hām altogether. The confusion is six centuries old and permanent."
   },
   "tottenham-hale": {
     gist: "“Totta's homestead”, at the nook of land.",
@@ -1107,7 +1107,7 @@ const ETYMOLOGY = {
     gist: "“Tata's ridge”, and a stone of uncertain purpose.",
     chain: ["Taterugge (c.1150)", "Totteridge"],
     text: "The name comes from a man called Tata and Old English hrycg, a ridge — and the village does run along one. Whetstone, its neighbour, is the puzzle.",
-    note: "Whetstone is the puzzle. The story that soldiers sharpened their swords on a stone here before the Battle of Barnet in 1471 is killed by the name being recorded in 1417. Soberer readings are a place where whetstones were quarried, or a house or inn called the Whetstone."
+    note: "“Whetstone” is the puzzle. The story that soldiers sharpened their swords on a stone here before the Battle of Barnet in 1471 is killed by the name being recorded in 1417. Soberer readings are a place where whetstones were quarried, or a house or inn called the Whetstone."
   },
   "tower-hill": {
     gist: "The hill outside the Tower of London.",
@@ -1120,7 +1120,7 @@ const ETYMOLOGY = {
   "turnham-green": {
     gist: "A green by a bend — probably in the river.",
     chain: ["Turneham (1229)", "Turnham Green"],
-    text: "The name comes, most likely, from an Old English word for a bend or curve plus hām or hamm, land in a loop of the Thames — which fits the ground here exactly. Green is the common.",
+    text: "The name comes, most likely, from an Old English word for a bend or curve plus hām or hamm, land in a loop of the Thames — which fits the ground here exactly. “Green” is the common.",
     note: "The first element is not agreed. Alternatives include a personal name, Turna, and Old English trun, “round”, describing a circular enclosure."
   },
   "turnpike-lane": {
@@ -1255,7 +1255,7 @@ const ETYMOLOGY = {
   "willesden-green": {
     gist: "“The hill by the spring”, and its green.",
     chain: ["Wellesdone (1086)", "Wilsdon", "Willesden"],
-    text: "The name comes from Old English wiell, a spring, and dūn, a hill. Green is the hamlet's common grazing, added to distinguish the settlement on it."
+    text: "The name comes from Old English wiell, a spring, and dūn, a hill. “Green” is the hamlet's common grazing, added to distinguish the settlement on it."
   },
   "willesden-junction": {
     gist: "A railway junction, not a place.",
@@ -1264,7 +1264,7 @@ const ETYMOLOGY = {
   "wimbledon": {
     gist: "“Wynnman's hill”.",
     chain: ["Wunemannedune (c.950)", "Wimbeldon", "Wimbledon"],
-    text: "The name comes from a man called Wynnman and Old English dūn, a hill — the high ground the common now covers. The b is a later intrusion, the mouth's shortcut between m and l."
+    text: "The name comes from a man called Wynnman and Old English dūn, a hill — the high ground the common now covers. The “b” is a later intrusion, the mouth's shortcut between m and l."
   },
   "wimbledon-park": {
     gist: "The park of Wimbledon House.",
@@ -1286,6 +1286,6 @@ const ETYMOLOGY = {
   },
   "woodside-park": {
     gist: "The settlement at the side of the wood.",
-    text: "Originally referring to Woodside, the hamlet on the edge of Finchley Wood — side in the sense of the ground alongside something, as in hillside. Park was added by the builders of the Victorian estate."
+    text: "Originally referring to Woodside, the hamlet on the edge of Finchley Wood — “side” in the sense of the ground alongside something, as in “hillside”. “Park” was added by the builders of the Victorian estate."
   }
 };
