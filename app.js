@@ -937,7 +937,7 @@
       setCurrent(id);
       panel.classList.remove('show');
       parkTrain(id);
-      tweenTo({ cx: P[id].x, cy: P[id].y, w: stationW }, 1100, function () {
+      tweenTo({ cx: P[id].x, cy: P[id].y, w: stationW }, 2200, function () {
         parkTrain(id);
         showStation(id);
       });
@@ -1224,14 +1224,16 @@
   layoutBtn.textContent = layoutMode === 'schematic' ? 'Geographic' : 'Schematic';
   view = overview();
   applyCam();
-  setTimeout(function () { if (!current) hint.classList.add('show'); }, 900);
+  /* early enough to finish fading in before the map starts moving */
+  setTimeout(function () { if (!current) hint.classList.add('show'); }, 350);
 
+  /* a beat on the whole map, then away to a station at random */
   setTimeout(function () {
     if (current) return;               // the viewer got there first
     var id = ids[Math.floor(Math.random() * ids.length)];
     search.value = STATIONS[id].name;
     combo.classList.add('filled');
     goTo(id);
-  }, 2800);
+  }, 1500);
 
 })();
