@@ -5,7 +5,7 @@
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>London Tube, Explained</title>
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -49,6 +49,8 @@
   <div id="panel-inner"></div>
 </aside>
 
+<!-- Control bar, hidden for now. Uncomment to bring it back: app.js binds each
+     button only if it is present, so nothing else needs changing.
 <div id="controls">
   <button id="btn-overview" type="button">Whole map</button>
   <button id="btn-random" type="button">Surprise me</button>
@@ -56,13 +58,14 @@
   <button id="btn-legend" type="button" aria-expanded="false">Lines</button>
   <div id="legend" hidden></div>
 </div>
+-->
 
 <div id="hint">Drag to pan &middot; scroll to zoom &middot; click any station</div>
 
-<script src="data/network.js?v=10"></script>
-<script src="data/schematic.js?v=10"></script>
-<script src="data/etymology.js?v=10"></script>
-<script src="data/sources.js?v=10"></script>
-<script src="app.js?v=10"></script>
+<script src="data/network.js?v=11"></script>
+<script src="data/schematic.js?v=11"></script>
+<script src="data/etymology.js?v=11"></script>
+<script src="data/sources.js?v=11"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>

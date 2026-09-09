@@ -1238,7 +1238,7 @@
     var t0 = performance.now(), ms = 1600;
     layoutMode = mode;
     stationW = LAYOUT_STEP[mode] * STATION_ZOOM[mode];
-    layoutBtn.textContent = mode === 'schematic' ? 'Geographic' : 'Schematic';
+    if (layoutBtn) layoutBtn.textContent = mode === 'schematic' ? 'Geographic' : 'Schematic';
     anim = null;
 
     frameJobs.push(function (now) {
@@ -1274,32 +1274,44 @@
     });
   }
 
-  layoutBtn.addEventListener('click', function () {
-    setLayout(layoutMode === 'schematic' ? 'geographic' : 'schematic');
-  });
+  if (layoutBtn) {
+    layoutBtn.addEventListener('click', function () {
+      setLayout(layoutMode === 'schematic' ? 'geographic' : 'schematic');
+    });
+  }
 
   /* ------------------------------------------------------------------
    * Buttons
+   *
+   * The control bar is commented out of index.html for now, so each of these
+   * binds only if its button is actually on the page. Uncomment the markup and
+   * they all come back with it.
    * ---------------------------------------------------------------- */
 
-  document.getElementById('btn-overview').addEventListener('click', function () {
-    tweenTo(overview(), 1400);
-  });
-  document.getElementById('btn-random').addEventListener('click', function () {
+  function onClick(id, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', fn);
+  }
+
+  onClick('btn-overview', function () { tweenTo(overview(), 1400); });
+
+  onClick('btn-random', function () {
     var id;
     do { id = ids[Math.floor(Math.random() * ids.length)]; } while (id === current);
     choose(id);
   });
 
   var legend = document.getElementById('legend');
-  legend.innerHTML = Object.keys(LINES).map(function (k) {
-    return '<div><i style="background:' + LINES[k].colour + '"></i>' +
-      esc(LINES[k].name) + '</div>';
-  }).join('');
-  document.getElementById('btn-legend').addEventListener('click', function () {
-    legend.hidden = !legend.hidden;
-    this.setAttribute('aria-expanded', String(!legend.hidden));
-  });
+  if (legend) {
+    legend.innerHTML = Object.keys(LINES).map(function (k) {
+      return '<div><i style="background:' + LINES[k].colour + '"></i>' +
+        esc(LINES[k].name) + '</div>';
+    }).join('');
+    onClick('btn-legend', function () {
+      legend.hidden = !legend.hidden;
+      this.setAttribute('aria-expanded', String(!legend.hidden));
+    });
+  }
 
   window.addEventListener('resize', applyCam);
 
@@ -1309,7 +1321,7 @@
 
   window.tube = { goTo: goTo, ids: ids, route: route, view: function () { return view; } };
 
-  layoutBtn.textContent = layoutMode === 'schematic' ? 'Geographic' : 'Schematic';
+  if (layoutBtn) layoutBtn.textContent = layoutMode === 'schematic' ? 'Geographic' : 'Schematic';
   view = overview();
   applyCam();
   /* early enough to finish fading in before the map starts moving */
