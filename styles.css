@@ -243,6 +243,7 @@ html, body {
   border-bottom: 1px solid #d9dee4;
 }
 #panel .src:hover { color: var(--ink); border-bottom-color: currentColor; }
+#panel .src.checked { color: var(--ink-dim); }
 
 #panel .note {
   margin-top: 14px;

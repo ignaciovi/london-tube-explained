@@ -97,14 +97,29 @@ from and is not offered as one.
 
 The links are not guesses. `tools/sources.py` puts every candidate title through
 the MediaWiki API, follows redirects to the canonical article and keeps only
-titles the API confirms exist; a station whose article could not be confirmed
-would have no link rather than a hopeful one. All 270 resolve — 54 of them to
-combined National Rail articles such as *Cannon Street station*, and Bank and
-Monument to the single article they share.
+titles the API confirms exist. All 270 resolve — 54 of them to combined National
+Rail articles such as *Cannon Street station*, and Bank and Monument to the
+single article they share.
 
-If you want the entries to rest on cited sources rather than on scholarship
-recalled, that is a different and much larger job: reading a source per station
-and rewriting wherever it disagrees.
+**What was actually checked.** `tools/verify.py` then fetched all 270 articles
+and tested, for each, whether the article corroborates the derivation given
+here — matching on the distinctive things an entry commits to, such as the
+earliest recorded form or the Old English root. The panel shows a tick beside
+the link where it does:
+
+| | |
+| --- | --- |
+| ✓ Wikipedia | 220 stations — the article supports the derivation |
+| Wikipedia | 50 stations — the article never discusses the name, so it corroborates nothing either way |
+
+The check earned its keep. Elm Park was wrong: the entry called it a 1930s
+developer's invention, and the article records Elm Farm in 1777 and the Elms in
+1883, so the name is older than the estate built over it. Upton Park and
+Northwick Park were named at one remove — after a Victorian housing development
+and a public park respectively — and both entries now say so.
+
+What is still not done is citing a scholarly source per station. That is a
+larger job: a reference book per name, and a rewrite wherever it disagrees.
 
 ## Routing
 

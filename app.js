@@ -823,8 +823,13 @@
         : '') +
       /* further reading, not a citation — see data/sources.js */
       (SOURCES[id]
-        ? '<a class="src" href="' + esc(SOURCES[id]) + '" target="_blank" ' +
-          'rel="noopener noreferrer">Wikipedia &#8599;</a>'
+        ? '<a class="src' + (SOURCES[id].checked ? ' checked' : '') + '" href="' +
+          esc(SOURCES[id].url) + '" target="_blank" rel="noopener noreferrer" title="' +
+          (SOURCES[id].checked
+            ? 'This article corroborates the derivation given here'
+            : 'This article does not discuss the name — further reading only') +
+          '">' + (SOURCES[id].checked ? '&#10003; ' : '') +
+          'Wikipedia &#8599;</a>'
         : '');
     panel.classList.add('show');
     panel.scrollTop = 0;

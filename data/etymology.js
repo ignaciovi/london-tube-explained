@@ -364,8 +364,9 @@ const ETYMOLOGY = {
     note: "The claim that the name corrupts “Infanta de Castile” has no documentary support and is rejected by place-name scholars. The two phrases do not corrupt into one another, and the heraldic elephant needs no explaining."
   },
   "elm-park": {
-    gist: "A housing estate named for its elm trees.",
-    text: "The name was invented for a housing estate laid out on Hornchurch farmland in the 1930s, in the manner of suburban developers everywhere — a tree and a park, whether or not either was there. The station was built in 1935 to serve it."
+    gist: "Elm Farm, whose land the estate was built over.",
+    chain: ["Elm Farm (1777)", "the Elms (1883)", "Elm Park"],
+    text: "The name comes from Elm Farm, recorded here in 1777 and known as the Elms by 1883. The housing estate laid out over its fields in the 1930s took the farm's name, and the station was built in 1935 to serve the estate."
   },
   "embankment": {
     gist: "The Victoria Embankment — land reclaimed from the Thames.",
@@ -790,7 +791,7 @@ const ETYMOLOGY = {
   },
   "northwick-park": {
     gist: "The Barons Northwick, landowners in Harrow.",
-    text: "The station is named after the Rushout family, Barons Northwick, who held the estate here and left their title on it. The title itself comes from Northwick Park in Worcestershire — “the north wīc”, a specialised farm."
+    text: "The station is named after the public park beside it, which carries the title of the Rushout family, Barons Northwick, who held the estate here. Their title comes from Northwick Park in Worcestershire — “the north wīc”, a specialised farm."
   },
   "northwood": {
     gist: "The north wood of Ruislip parish.",
@@ -1142,7 +1143,7 @@ const ETYMOLOGY = {
   },
   "upton-park": {
     gist: "“The upper farmstead”, and its park.",
-    text: "The name comes from Old English upp and tūn, a farmstead — the farm on the higher ground, one of the commonest names in England. The park was the grounds of an estate house here."
+    text: "The station is named after the Upton Park housing development built here in Victorian times, which took its name in turn from Upton — Old English upp plus tūn, the farm on the higher ground, one of the commonest names in England."
   },
   "uxbridge": {
     gist: "“The bridge of the Wixan” — an Anglo-Saxon tribal group.",
