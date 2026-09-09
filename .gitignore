@@ -1,2 +1,5 @@
 .DS_Store
 *.log
+
+# working notes, kept local
+INSTRUCTIONS.md
