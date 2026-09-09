@@ -21,6 +21,10 @@ is plain JavaScript, so double-clicking the file works.
   the train travels there along the fastest route, changing lines where it has
   to, drawing its trail in the colour of whichever line it is on.
 * Clicking any station on the map does the same thing.
+* Three interchanges are a walk rather than a ride — Bank to Monument, and the
+  two split-site stations at Edgware Road and Shepherd's Bush. On those legs the
+  train marker becomes a person on foot, and turns back into a train on the
+  other side.
 * Drag to pan, scroll to zoom, **Whole map** to pull back out.
 * **Geographic** / **Schematic** slides between the two layouts. The stations
   travel rather than cutting, which makes the relationship between diagram and

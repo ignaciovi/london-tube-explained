@@ -437,8 +437,14 @@
     labels[id] = t;
   });
 
+  /* You travel as a train, except across the three interchanges that are a
+   * walk rather than a ride — Bank to Monument and the two split-site
+   * stations — where you become a person on foot. Both markers live in the
+   * same group and are swapped as the journey crosses onto and off a walk. */
   var train = el('g', { id: 'train' });
-  train.innerHTML =
+
+  var markerTrain = el('g', {});
+  markerTrain.innerHTML =
     '<rect x="-11.4" y="-6.6" width="22.8" height="13.2" rx="4.8" fill="#fff"' +
     ' stroke="#14181c" stroke-width="1.1"/>' +
     '<rect x="-9.6" y="-4.8" width="19.2" height="9.6" rx="3.4" fill="#1f262e"/>' +
@@ -446,6 +452,22 @@
     '<rect x="-1.6" y="-3" width="4.6" height="4" rx="1.2" fill="#9bdcff"/>' +
     '<rect x="4.4" y="-3" width="3.4" height="4" rx="1.2" fill="#ffd300"/>' +
     '<circle cx="9.4" cy="0" r="1.5" fill="#ffd300"/>';
+
+  var markerWalk = el('g', {});
+  markerWalk.innerHTML =
+    '<circle cx="0" cy="0" r="8.8" fill="#fff" stroke="#14181c" stroke-width="1.1"/>' +
+    '<circle cx="0.6" cy="-4.5" r="1.9" fill="#1f262e"/>' +
+    '<g fill="none" stroke="#1f262e" stroke-width="1.7" stroke-linecap="round">' +
+    '<path d="M0.6 -2.4 L -0.3 1.5"/>' +      /* torso */
+    '<path d="M-0.3 1.5 L 2.7 5.4"/>' +       /* leading leg */
+    '<path d="M-0.3 1.5 L -3.3 5.2"/>' +      /* trailing leg */
+    '<path d="M0.3 -1.4 L 3.1 0.7"/>' +       /* leading arm */
+    '<path d="M0.3 -1.4 L -2.7 -0.1"/>' +     /* trailing arm */
+    '</g>';
+  markerWalk.style.display = 'none';
+
+  train.appendChild(markerTrain);
+  train.appendChild(markerWalk);
   train.style.display = 'none';
   gTrain.appendChild(train);
 
@@ -626,20 +648,32 @@
    * Train
    * ---------------------------------------------------------------- */
 
-  var trainPos = null;      // {x, y, angle}
+  var trainPos = null;      // {x, y, angle, walking}
 
   function placeTrain() {
     if (!trainPos) return;
-    train.setAttribute('transform',
-      'translate(' + trainPos.x + ',' + trainPos.y + ') ' +
-      'rotate(' + trainPos.angle + ') ' +
-      'scale(' + (unitsPerPx * TRAIN_SCALE) + ')');
+    var walking = !!trainPos.walking;
+    markerTrain.style.display = walking ? 'none' : '';
+    markerWalk.style.display = walking ? '' : 'none';
+
+    var s = unitsPerPx * TRAIN_SCALE;
+    var t = 'translate(' + trainPos.x + ',' + trainPos.y + ') ';
+    if (walking) {
+      /* a train points along the track, but a person stays upright — only
+       * which way they face changes, so mirror rather than rotate */
+      var facing = (trainPos.angle > 90 || trainPos.angle < -90) ? -s : s;
+      t += 'scale(' + facing + ',' + s + ')';
+    } else {
+      t += 'rotate(' + trainPos.angle + ') scale(' + s + ')';
+    }
+    train.setAttribute('transform', t);
   }
 
   function parkTrain(id, angle) {
     var p = P[id];
     /* sit the little train just beside the station dot */
-    trainPos = { x: p.x - 30 * unitsPerPx, y: p.y - 26 * unitsPerPx, angle: angle || 0 };
+    trainPos = { x: p.x - 30 * unitsPerPx, y: p.y - 26 * unitsPerPx,
+                 angle: angle || 0, walking: false };
     train.style.display = '';
     placeTrain();
   }
@@ -737,7 +771,9 @@
       var rpNow = routeParts[i];
       var at = walk(ridePath(rpNow.g, lastSpread, rpNow.forward), frac);
       var x = at.x, y = at.y;
-      trainPos = { x: x, y: y, angle: at.angle };
+      /* Bank to Monument and the two split-site stations are a walk, not a
+       * ride: you get off the train for that leg and back on afterwards */
+      trainPos = { x: x, y: y, angle: at.angle, walking: steps[i].line === 'walk' };
 
       for (var j = 0; j < routeParts.length; j++) {
         var rp = routeParts[j];
