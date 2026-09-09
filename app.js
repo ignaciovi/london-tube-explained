@@ -1083,7 +1083,20 @@
     });
   }
 
-  search.addEventListener('focus', function () { render(filter(search.value)); });
+  /* The box shows where you are, but you come back to it to go somewhere else,
+   * so focusing it clears the old name rather than making you delete it. If you
+   * look away without choosing, the name you are at comes back. */
+  search.addEventListener('focus', function () {
+    search.value = '';
+    combo.classList.remove('filled');
+    render(filter(''));
+  });
+  search.addEventListener('blur', function () {
+    if (!search.value && current) {
+      search.value = STATIONS[current].name;
+      combo.classList.add('filled');
+    }
+  });
   search.addEventListener('input', function () {
     combo.classList.toggle('filled', !!search.value);
     render(filter(search.value));
@@ -1153,47 +1166,117 @@
     return null;
   }
 
-  var drag = null;
+  /* Touch and mouse want different things here.
+   *
+   * On a mouse, dragging pans — there is a cursor, so there is no ambiguity
+   * about what you meant.
+   *
+   * On touch there is no cursor, and a finger that lands on the map is far
+   * more often reaching for a station than trying to shove the map about. So
+   * one finger only selects, and the map is moved and scaled with two: pinch
+   * to zoom, and the midpoint carries the map with it. */
+
+  var pointers = new Map();   // live pointers, by id
+  var drag = null;            // mouse pan in progress
+  var pinch = null;           // two-finger gesture in progress
+
+  function screenPoint(clientX, clientY) {
+    var r = svg.getBoundingClientRect();
+    return { x: clientX - r.left, y: clientY - r.top };
+  }
+
+  function touchPair() {
+    var out = [];
+    pointers.forEach(function (p) { if (p.type === 'touch') out.push(p); });
+    return out.length >= 2 ? [out[0], out[1]] : null;
+  }
+
+  function startPinch() {
+    var pair = touchPair();
+    if (!pair) return null;
+    var cw = svg.clientWidth || 1, ch = svg.clientHeight || 1;
+    var mid = screenPoint((pair[0].x + pair[1].x) / 2, (pair[0].y + pair[1].y) / 2);
+    /* the map point under the midpoint stays under it for the whole gesture */
+    return {
+      d0: Math.max(1, Math.hypot(pair[0].x - pair[1].x, pair[0].y - pair[1].y)),
+      w0: view.w,
+      ux: (view.cx - view.w / 2) + mid.x * unitsPerPx,
+      uy: (view.cy - (view.w * ch / cw) / 2) + mid.y * unitsPerPx
+    };
+  }
+
+  function updatePinch() {
+    var pair = touchPair();
+    if (!pair || !pinch) return;
+    var cw = svg.clientWidth || 1, ch = svg.clientHeight || 1;
+    var d = Math.max(1, Math.hypot(pair[0].x - pair[1].x, pair[0].y - pair[1].y));
+    var mid = screenPoint((pair[0].x + pair[1].x) / 2, (pair[0].y + pair[1].y) / 2);
+
+    var w = Math.max(6, Math.min(overviewWidth() * 1.6, pinch.w0 * pinch.d0 / d));
+    var u = w / cw;                       // units per pixel at the new scale
+    view.w = w;
+    view.cx = pinch.ux + w / 2 - mid.x * u;
+    view.cy = pinch.uy + (w * ch / cw) / 2 - mid.y * u;
+    applyCam();
+  }
+
   svg.addEventListener('pointerdown', function (ev) {
     anim = null;
-    drag = { x: ev.clientX, y: ev.clientY,
-             x0: ev.clientX, y0: ev.clientY, moved: false };
+    var p = { id: ev.pointerId, type: ev.pointerType,
+              x: ev.clientX, y: ev.clientY,
+              x0: ev.clientX, y0: ev.clientY, moved: false };
+    pointers.set(ev.pointerId, p);
     try { svg.setPointerCapture(ev.pointerId); } catch (e) {}
+
+    if (ev.pointerType === 'touch') {
+      if (touchPair()) {
+        pinch = startPinch();
+        /* neither finger is selecting anything now */
+        pointers.forEach(function (q) { q.moved = true; });
+      }
+      return;                              // one finger never pans
+    }
+    drag = p;
     svg.classList.add('dragging');
   });
+
   svg.addEventListener('pointermove', function (ev) {
-    if (!drag) {
+    var p = pointers.get(ev.pointerId);
+    if (!p) {
       /* show that names and dots can be clicked */
       svg.style.cursor = stationAt(ev.clientX, ev.clientY) ? 'pointer' : '';
       return;
     }
-    var dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+    var prevX = p.x, prevY = p.y;
+    p.x = ev.clientX; p.y = ev.clientY;
     /* measured from where the press began, not from the last event, so a slow
      * drag cannot creep past the threshold unnoticed */
-    if (Math.hypot(ev.clientX - drag.x0, ev.clientY - drag.y0) > TAP_SLOP) {
-      drag.moved = true;
+    if (Math.hypot(p.x - p.x0, p.y - p.y0) > TAP_SLOP) p.moved = true;
+
+    if (pinch) { updatePinch(); return; }
+    if (drag === p) {
+      view.cx -= (p.x - prevX) * unitsPerPx;
+      view.cy -= (p.y - prevY) * unitsPerPx;
+      applyCam();
     }
-    view.cx -= dx * unitsPerPx;
-    view.cy -= dy * unitsPerPx;
-    drag.x = ev.clientX; drag.y = ev.clientY;
-    applyCam();
   });
-  function endDrag(ev) {
-    if (!drag) return;
-    var tapped = !drag.moved;
-    drag = null;
-    svg.classList.remove('dragging');
-    if (ev && ev.pointerId !== undefined) {
-      try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
-    }
-    /* a tap selects; a drag that happens to end on a station does not */
-    if (tapped && ev) {
+
+  function endPointer(ev) {
+    var p = pointers.get(ev.pointerId);
+    if (!p) return;
+    pointers.delete(ev.pointerId);
+    if (!touchPair()) pinch = null;
+    if (drag === p) { drag = null; svg.classList.remove('dragging'); }
+    try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
+
+    /* a tap selects; a drag, or either finger of a pinch, does not */
+    if (!p.moved && pointers.size === 0) {
       var id = stationAt(ev.clientX, ev.clientY);
       if (id) goTo(id);
     }
   }
-  svg.addEventListener('pointerup', endDrag);
-  svg.addEventListener('pointercancel', endDrag);
+  svg.addEventListener('pointerup', endPointer);
+  svg.addEventListener('pointercancel', endPointer);
 
   svg.addEventListener('wheel', function (ev) {
     ev.preventDefault();
