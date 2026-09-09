@@ -656,7 +656,7 @@
     markerTrain.style.display = walking ? 'none' : '';
     markerWalk.style.display = walking ? '' : 'none';
 
-    var s = unitsPerPx * TRAIN_SCALE;
+    var s = unitsPerPx * TRAIN_SCALE * popScale;
     var t = 'translate(' + trainPos.x + ',' + trainPos.y + ') ';
     if (walking) {
       /* a train points along the track, but a person stays upright — only
@@ -677,11 +677,30 @@
                  angle: angle || 0, walking: false };
     train.style.display = '';
     placeTrain();
-    if (wasHidden) {
-      /* arriving from nothing: fade rather than pop, in step with the panel */
-      train.style.opacity = '0';
-      requestAnimationFrame(function () { train.style.opacity = '1'; });
-    }
+    if (wasHidden) popIn();
+  }
+
+  /* Appearing from nothing, the traveller inflates: up from nothing, a little
+   * past full size, then back to rest. One overshoot curve rather than two
+   * joined ones, so there is no kink at the top.
+   *
+   * This drives its own frames instead of joining frameJobs, because those get
+   * cleared when a journey is interrupted — which would strand the marker at
+   * whatever size the pop had reached. */
+  var popScale = 1;
+
+  function popIn(ms) {
+    ms = ms || 520;
+    var t0 = performance.now();
+    var c1 = 1.70158, c3 = c1 + 1;      // overshoots to about 110%
+
+    (function step(now) {
+      var p = Math.min(1, (now - t0) / ms);
+      var q = p - 1;
+      popScale = p >= 1 ? 1 : 1 + c3 * q * q * q + c1 * q * q;
+      placeTrain();
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
   }
 
   /* ------------------------------------------------------------------
