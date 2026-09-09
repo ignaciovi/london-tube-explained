@@ -423,7 +423,8 @@
       cx: p.x, cy: p.y, r: 3,
       'stroke-width': 1.2, 'vector-effect': 'non-scaling-stroke'
     });
-    c.addEventListener('click', function (ev) { ev.stopPropagation(); goTo(id); });
+    /* no click listener here: selection is hit-tested on pointerup instead,
+     * so a name counts as much as its dot and a drag never counts at all */
     c.addEventListener('mouseenter', function () { c.setAttribute('r', dotR(id) * 1.6); });
     c.addEventListener('mouseleave', function () { c.setAttribute('r', dotR(id)); });
     gStations.appendChild(c);
@@ -599,6 +600,10 @@
     return out;
   }
 
+  /* where each visible name currently sits on screen, so it can be clicked;
+   * null for names the declutter pass dropped this frame */
+  var labelBoxes = {};
+
   function placeLabels() {
     var cw = svg.clientWidth || 1, ch = svg.clientHeight || 1;
     var vx = view.cx - view.w / 2;
@@ -629,17 +634,25 @@
           var q = placed[j];
           if (box.x0 < q.x1 && box.x1 > q.x0 && box.y0 < q.y1 && box.y1 > q.y0) { hit = true; break; }
         }
-        if (!hit) { chosen = { A: A, box: box }; break; }
+        if (!hit) { chosen = { A: A, box: box, reserve: true }; break; }
       }
-      if (!chosen && forced) chosen = { A: ANCHORS[0], box: null };
+      if (!chosen && forced) {
+        /* the station you are at always gets a name, even on top of another */
+        var A0 = ANCHORS[0], lx0 = sx + A0.dx, ly0 = sy + A0.dy;
+        chosen = { A: A0, reserve: false,
+                   box: { x0: lx0 - 2, x1: lx0 + w + 2, y0: ly0 - h, y1: ly0 + 3 } };
+      }
 
       if (chosen) {
-        if (chosen.box) placed.push(chosen.box);
+        if (chosen.reserve) placed.push(chosen.box);
+        /* remember where it landed, so the name can be clicked */
+        labelBoxes[id] = chosen.box;
         t.style.display = '';
         t.setAttribute('x', p.x + chosen.A.dx * unitsPerPx);
         t.setAttribute('y', p.y + chosen.A.dy * unitsPerPx);
         t.setAttribute('text-anchor', chosen.A.anchor);
       } else {
+        labelBoxes[id] = null;
         t.style.display = 'none';
       }
     }
@@ -1107,17 +1120,59 @@
    * Map interaction
    * ---------------------------------------------------------------- */
 
+  /* A finger is a blunter instrument than a mouse, and it also wobbles: give
+   * touch a wider reach around each dot and more slack before a tap counts as
+   * a drag. Both are read once — a device does not change its pointer midway. */
+  var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  var TAP_REACH = coarse ? 26 : 14;   // screen px around a dot that selects it
+  var TAP_SLOP = coarse ? 10 : 4;     // movement allowed before it is a drag
+
+  /* Which station is under a point on screen: its dot if the point is near
+   * enough, otherwise its name if the point is inside it. Names are hit-tested
+   * from the boxes the declutter pass recorded, so only names you can actually
+   * see can be clicked. */
+  function stationAt(clientX, clientY) {
+    var r = svg.getBoundingClientRect();
+    var cw = svg.clientWidth || 1, ch = svg.clientHeight || 1;
+    var px = clientX - r.left, py = clientY - r.top;
+    var ux = (view.cx - view.w / 2) + px * unitsPerPx;
+    var uy = (view.cy - (view.w * ch / cw) / 2) + py * unitsPerPx;
+
+    var best = null, bestD = Infinity, i, id;
+    for (i = 0; i < ids.length; i++) {
+      id = ids[i];
+      var d = Math.hypot(P[id].x - ux, P[id].y - uy) / unitsPerPx;
+      if (d <= TAP_REACH && d < bestD) { bestD = d; best = id; }
+    }
+    if (best) return best;
+
+    for (i = 0; i < ids.length; i++) {
+      var b = labelBoxes[ids[i]];
+      if (b && px >= b.x0 && px <= b.x1 && py >= b.y0 && py <= b.y1) return ids[i];
+    }
+    return null;
+  }
+
   var drag = null;
   svg.addEventListener('pointerdown', function (ev) {
     anim = null;
-    drag = { x: ev.clientX, y: ev.clientY, moved: false };
-    svg.setPointerCapture(ev.pointerId);
+    drag = { x: ev.clientX, y: ev.clientY,
+             x0: ev.clientX, y0: ev.clientY, moved: false };
+    try { svg.setPointerCapture(ev.pointerId); } catch (e) {}
     svg.classList.add('dragging');
   });
   svg.addEventListener('pointermove', function (ev) {
-    if (!drag) return;
+    if (!drag) {
+      /* show that names and dots can be clicked */
+      svg.style.cursor = stationAt(ev.clientX, ev.clientY) ? 'pointer' : '';
+      return;
+    }
     var dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
-    if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
+    /* measured from where the press began, not from the last event, so a slow
+     * drag cannot creep past the threshold unnoticed */
+    if (Math.hypot(ev.clientX - drag.x0, ev.clientY - drag.y0) > TAP_SLOP) {
+      drag.moved = true;
+    }
     view.cx -= dx * unitsPerPx;
     view.cy -= dy * unitsPerPx;
     drag.x = ev.clientX; drag.y = ev.clientY;
@@ -1125,10 +1180,16 @@
   });
   function endDrag(ev) {
     if (!drag) return;
+    var tapped = !drag.moved;
     drag = null;
     svg.classList.remove('dragging');
     if (ev && ev.pointerId !== undefined) {
       try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
+    }
+    /* a tap selects; a drag that happens to end on a station does not */
+    if (tapped && ev) {
+      var id = stationAt(ev.clientX, ev.clientY);
+      if (id) goTo(id);
     }
   }
   svg.addEventListener('pointerup', endDrag);

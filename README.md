@@ -20,7 +20,12 @@ is plain JavaScript, so double-clicking the file works.
 * The **Go to** box at the top right searches all 270 stations. Pick one and
   the train travels there along the fastest route, changing lines where it has
   to, drawing its trail in the colour of whichever line it is on.
-* Clicking any station on the map does the same thing.
+* Clicking a station does the same thing — its dot **or** its name. Selection is
+  hit-tested on pointer-up rather than by a click listener per dot, which means
+  a name counts as much as its dot, and a drag that happens to finish on a
+  station does not select it. Touch gets a wider reach around each dot and more
+  slack before a tap is judged a drag, since a finger is blunter than a mouse
+  and wobbles.
 * Three interchanges are a walk rather than a ride — Bank to Monument, and the
   two split-site stations at Edgware Road and Shepherd's Bush. On those legs the
   train marker becomes a person on foot, and turns back into a train on the
