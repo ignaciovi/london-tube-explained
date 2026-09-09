@@ -16,7 +16,11 @@
 * { box-sizing: border-box; }
 
 html, body {
-  height: 100%;
+  /* dvh tracks the area actually visible as the phone's address bar shows and
+     hides; vh does not, and on iOS it counts space the bar is sitting on top
+     of. Browsers without dvh keep the vh line above it. */
+  height: 100vh;
+  height: 100dvh;
   margin: 0;
   overflow: hidden;
   background: var(--bg);
@@ -27,7 +31,14 @@ html, body {
 
 /* ---------- map ---------- */
 
-#map-wrap { position: fixed; inset: 0; }
+#map-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100dvh;
+}
 
 #map {
   width: 100%;
@@ -181,6 +192,7 @@ html, body {
   bottom: 22px;
   width: 380px;
   max-height: 58vh;
+  max-height: 58dvh;
   overflow-y: auto;
   padding: 20px 22px 22px;
   background: var(--panel);
@@ -323,7 +335,7 @@ html, body {
   #goto { top: 60px; left: 14px; right: 14px; width: auto; }
   #panel {
     left: 14px; right: 14px; bottom: 14px;
-    width: auto; max-height: 40vh; padding: 16px 17px 18px;
+    width: auto; max-height: 40dvh; padding: 16px 17px 18px;
   }
   #panel h2 { font-size: 21px; }
   #controls { left: 14px; bottom: calc(40vh + 24px); }

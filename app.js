@@ -1395,7 +1395,23 @@
     });
   }
 
+  /* The camera is derived from the map element's size, so it has to be redone
+   * whenever that size changes. A window resize is not enough on a phone: the
+   * element can settle to its real height after first paint, as the address bar
+   * resolves, and iOS does not reliably fire resize for that. Watching the
+   * element itself catches every case, whatever caused it. */
   window.addEventListener('resize', applyCam);
+  window.addEventListener('orientationchange', applyCam);
+  window.addEventListener('pageshow', applyCam);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', applyCam);
+  }
+  if (window.ResizeObserver) {
+    new ResizeObserver(applyCam).observe(svg);
+  } else {
+    /* older browsers: re-measure once more after everything has loaded */
+    window.addEventListener('load', applyCam);
+  }
 
   /* ------------------------------------------------------------------
    * Curtain up
