@@ -30,11 +30,11 @@ is plain JavaScript, so double-clicking the file works.
   two split-site stations at Edgware Road and Shepherd's Bush. On those legs the
   train marker becomes a person on foot, and turns back into a train on the
   other side.
-* Drag to pan and scroll to zoom with a mouse. On touch the two are separated:
-  one finger only ever selects a station, and the map is moved and scaled with
-  two — pinch to zoom, and the midpoint carries the map with it. A finger that
-  lands on the map is far more often reaching for a station than trying to
-  shove the map about, and there is no cursor to disambiguate.
+* Drag to pan — by mouse or by one finger — and a press that does not travel
+  far enough to count as a drag selects the station under it instead. Two
+  fingers pinch to zoom, with the midpoint carrying the map along as it moves;
+  scroll to zoom with a mouse. Lifting one finger of a pinch hands panning back
+  to the one still down.
 * Focusing the search box clears it, so you can type a new station without
   deleting the old one; look away without choosing and the name comes back.
 * **Geographic** / **Schematic** slides between the two layouts. The stations

@@ -1166,15 +1166,9 @@
     return null;
   }
 
-  /* Touch and mouse want different things here.
-   *
-   * On a mouse, dragging pans — there is a cursor, so there is no ambiguity
-   * about what you meant.
-   *
-   * On touch there is no cursor, and a finger that lands on the map is far
-   * more often reaching for a station than trying to shove the map about. So
-   * one finger only selects, and the map is moved and scaled with two: pinch
-   * to zoom, and the midpoint carries the map with it. */
+  /* Dragging pans, whether by mouse or by one finger, and a press that does
+   * not travel far enough to count as a drag selects instead. Two fingers
+   * pinch to zoom, with the midpoint carrying the map along as it moves. */
 
   var pointers = new Map();   // live pointers, by id
   var drag = null;            // mouse pan in progress
@@ -1228,13 +1222,13 @@
     pointers.set(ev.pointerId, p);
     try { svg.setPointerCapture(ev.pointerId); } catch (e) {}
 
-    if (ev.pointerType === 'touch') {
-      if (touchPair()) {
-        pinch = startPinch();
-        /* neither finger is selecting anything now */
-        pointers.forEach(function (q) { q.moved = true; });
-      }
-      return;                              // one finger never pans
+    if (ev.pointerType === 'touch' && touchPair()) {
+      /* a second finger turns the pan into a pinch, and neither finger is
+       * selecting anything any more */
+      pinch = startPinch();
+      drag = null;
+      pointers.forEach(function (q) { q.moved = true; });
+      return;
     }
     drag = p;
     svg.classList.add('dragging');
@@ -1265,8 +1259,13 @@
     var p = pointers.get(ev.pointerId);
     if (!p) return;
     pointers.delete(ev.pointerId);
-    if (!touchPair()) pinch = null;
     if (drag === p) { drag = null; svg.classList.remove('dragging'); }
+    if (!touchPair()) {
+      pinch = null;
+      /* lifting one finger of a pinch: let the one still down carry on panning
+       * rather than leaving the map stuck until it is lifted too */
+      pointers.forEach(function (q) { if (q.type === 'touch') drag = q; });
+    }
     try { svg.releasePointerCapture(ev.pointerId); } catch (e) {}
 
     /* a tap selects; a drag, or either finger of a pinch, does not */
